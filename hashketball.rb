@@ -222,25 +222,3 @@ def big_shoe_rebounds
     end
   end
 end
-
-def most_points.scored
-  #find highest player points
-  all_points= []
-  game_hash.each do |key, value|
-    game_hash[key][:players].each do |player, options|
-      all_points << num_points_scored(player)
-    end
-  end
-  all_points.sort!
-  highest_score = all_points[-1]
-
-  #return name of that player 
-  
-  game_hash.each do |key, value|
-    game_hash[key][:players].each do |player, options|
-      if options[:points] == highest_score
-        return player
-      end
-    end
-  end
-end
